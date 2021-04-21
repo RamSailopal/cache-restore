@@ -1,0 +1,23 @@
+#!/bin/bash
+  #
+  #
+  #       AUTHOR - Raman Sailopal 
+  #
+  # 
+  #       Script to restore live cache backup to a backup server
+  #       Restores output progress to a cacherest.log file.
+  #
+  #
+  # Sub-code with the cache commands to execute.
+  # \" notation is for quoting of quotation marks.
+  #
+  cmd()
+  {
+       sleep 2;
+       echo "ZN \"%SYS\"";
+       sleep 2;
+       echo "D EXTSELCT^DBREST(1,1,\"/var/opt/cache.cbk\",\"/tmp/cachebackuplist\",4,\"\")";
+       sleep 2;
+       echo "H";
+  }
+ cmd|csession {{ instname }} -B;
