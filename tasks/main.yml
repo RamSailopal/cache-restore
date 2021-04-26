@@ -10,7 +10,6 @@
   loop:
      - { src: "templates/cachebackuplist", dest: "/tmp/cachebackuplist", mode: "0744" }
      - { src: "templates/cacherestore", dest: "/tmp/cacherestore", mode: "0744" }
-
 - name: Copy Cache backup
   copy:
      src: files/cache.cbk
@@ -18,8 +17,6 @@
      owner: root
      group: root
      mode: 0444
-
-
 - name: "Build Cache namespaces"
   file:
      path: "{{ item }}"
@@ -28,10 +25,8 @@
      group: "{{ cgrp }}"
   with_items:
       - "{{ Directories }}"
-
 - name: "Run the Cache restore script"
   command: "/tmp/cacherestore"
-
 - name: copy Cache config file
   template:
      src: "{{ item.src }}"
@@ -41,12 +36,10 @@
      mode: "{{ item.mode }}"
   loop:
      - { src: "templates/cache.cpf", dest: "/usr/local/cache/cache.cpf", mode: "0744" }
-
   notify:
     - Reload the systemd service daemon
     - restart cache
- 
-- name: Restart Cache once more
+ - name: Restart Cache once more
   service:
      name: "cache"
      state: "restarted"
