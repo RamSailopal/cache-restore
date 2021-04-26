@@ -10,5 +10,5 @@ altjourn:
 databases: ['TEST=/var/test/test/','TEST1=/var/test/test1']
 namespaces: ['TEST=TEST1','TEST=TEST1']
 Directories: ['/var/test/test','/var/test/test1']
-devices: ['Test printer=lpr -Prprt10^OTH^P-DEC^^"QW"^^Test Printer^10]
+devices: ['Test printer=lpr -Prprt10^OTH^P-DEC^^"QW"^^Test Printer^10']
 backlist: ['/test/test','/var/test/test,Y','/test/test1','/var/test/test1,Y']
