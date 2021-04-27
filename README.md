@@ -56,7 +56,7 @@ Directories - The list of directories to set up
 
 [ Default - ['/var/test/test','/var/test/test1']]
 
-To ensure that there are no errors with in restore process, make sure that all of the entries above are consistent and then directories configured for namespaces are all configured in databases, namespaces and Directories respectively.
+IMPORTANT - To ensure that there are no errors with the restore process, make sure that all of the entries above are consistent and the directories configured in namespaces are also configured in databases and Directories respectively.
 
 devices - Any additional devices to configure
 
@@ -88,7 +88,7 @@ Example Playbook
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
-      role: cacherest
+      role: cache-restore
       instname: CACHE
       ...
 
