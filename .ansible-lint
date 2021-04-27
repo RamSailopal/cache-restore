@@ -1,0 +1,2 @@
+skip_list:  # or 'skip_list' to silence them completely
+  - command-instead-of-module  # Had issue with service not loading correctly with systemd module. Had to use systemctl command instead.
